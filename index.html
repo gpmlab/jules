@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Neuroevolution Simulation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is the first step towards an awesome project portfolio.</p>
+    <h1>Neuroevolution Simulation</h1>
+    <div id="container">
+        <canvas id="simulationCanvas"></canvas>
+        <div id="ui-container">
+            <h2>Controls</h2>
+            <div id="controls">
+                <label for="speed-slider">Speed</label>
+                <input type="range" id="speed-slider" min="1" max="10" value="1">
+                <button id="save-btn">Save Model</button>
+                <button id="load-btn">Load Model</button>
+                <input type="file" id="load-input" accept=".json" style="display: none;">
+                <label for="obstacles-input">Obstacles</label>
+                <input type="number" id="obstacles-input" value="5">
+                <button id="obstacles-btn">Set</button>
+                <label for="dynamic-obstacles">Dynamic Obstacles</label>
+                <input type="checkbox" id="dynamic-obstacles">
+            </div>
+            <h2>First Person View</h2>
+            <canvas id="fpvCanvas"></canvas>
+            <div id="stats">
+                <p>Generation: <span id="generation-span">1</span></p>
+                <p>Active Agents: <span id="active-agents-span">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="neuralNetwork.js"></script>
+    <script src="agent.js"></script>
+    <script src="visualizer.js"></script>
+    <script src="simulation.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
